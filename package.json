@@ -1,0 +1,17 @@
+{
+  "name": "node-testing-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/google-spreadsheet": "^4.0.0",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "google-auth-library": "^9.15.0",
+    "google-spreadsheet": "^4.1.4"
+  }
+}
