@@ -24,7 +24,7 @@ export class DocGoogleService {
 
       return res;
     } catch (error) {
-      console.log(error);
+      return null;
     }
   }
 }

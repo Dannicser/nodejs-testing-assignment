@@ -6,9 +6,6 @@ export class ClientService {
       console.log("Getting clients from API...");
 
       const { data } = await axios.get(`${process.env.API_URL}/clients`, {
-        params: {
-          limit: 5,
-        },
         headers: {
           Authorization: token,
         },

@@ -15,10 +15,19 @@ async function init() {
     }
 
     const clients = await ClientService.getClients(token);
-    const doc = new DocGoogleService(process.env.GOODLE_SHEET_ID);
-    await doc.saveDataToNewSheet(["id", "firstName", "lastName", "gender", "address", "city", "phone", "email", "status"], clients);
 
-    console.log("Data has been saved successfully!");
+    if (!clients) {
+      throw Error("API failed");
+    }
+
+    const doc = new DocGoogleService(process.env.GOODLE_SHEET_ID);
+    const res = await doc.saveDataToNewSheet(["id", "firstName", "lastName", "gender", "address", "city", "phone", "email", "status"], clients);
+
+    if (!res) {
+      throw Error("DocGoogleService failed");
+    }
+
+    console.log("Data has been saved successfully! Check you google sheets.");
   } catch (error) {
     console.log(error);
   }
